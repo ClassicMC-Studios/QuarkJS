@@ -4,16 +4,19 @@
 
 But it is modeled after React
 
-```js
-let [count, setCount] = useState(0);
-        
-function increment(){
+```html
+<div id="app"></div>
+<script>
+  let [count, setCount] = useState(0);
+                
+  function increment(){
     count = setCount(count+1);
-}
-function app(){
+  }
+  function app(){
     return `
-        <p>${count}</p>
-        <button onclick="increment()">Add</button>
+      <p>${count}</p>
+      <button onclick="increment()">Add</button>
     `
-};exportApp();
+  };exportApp();
+</script>
 ```
