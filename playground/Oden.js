@@ -1,5 +1,5 @@
 let count = state(0);
-set(count, "++");
+count = set("++");
 
 const template => () {
   return `<h1>${count}</h1>`;
