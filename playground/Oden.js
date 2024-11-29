@@ -1,4 +1,4 @@
-let count = state(0);
+let count = use(0);
 count = set(count+1);
 
 const template => () {
