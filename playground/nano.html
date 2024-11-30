@@ -25,7 +25,7 @@
     }
 
     let count = $(0,"count");
-    // $bind(()=>{return count;},"count");
+    $bind(()=>{return count;},"count");
     count = $set(count+1,"count");
     $$();
 
