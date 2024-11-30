@@ -4,31 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>nano</title>
+  <script src="./nano.js"></script>
 </head>
 <body>
-  <p id="count"></p>
+  <div id="app"></div>
   <script>
-    let bound=[]
-    function $(val){
-      return val;
-    }
-    function $set(val){
-      return val;
-    }
-    function $bind(func,id){
-      bound.push([func,document.getElementById(id)]);
-    }
-    function $$(){
-      for(let i=0;i<bound.length;i++;){
-        alert("hmm");
-        bound[i][1].innerHTML = bound[i][0]();
-      }
-    }
+    $css("bcss");
+    $css("bc-colors");
 
     let count = $(0);
-    $bind(()=>{return count;},"count");
-    count = $set(count+1);
-    $$();
+    function template(){
+      return (`
+        <div class='main bg-night'></div>
+        <div class="true-center text-center">
+          <h1 class="white">a ${count <= 3 ? "couple":"lot"}...${count}</h1>
+          <button class="m r border-gray bg-night p gray" onclick="add()">+</button>
+        </div>
+      `)
+    }
+    $bind(template,"app");
+    function add(){
+      count = $set(count+1);
+    }
 
   </script>
 </body>
