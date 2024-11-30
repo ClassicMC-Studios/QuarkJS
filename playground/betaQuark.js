@@ -16,4 +16,3 @@ function useState(type){
       return val;
   }]
 }
-

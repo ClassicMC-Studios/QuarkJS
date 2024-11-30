@@ -3,22 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QuarkJS</title>
-  <link rel="shortcut icon" href="https://guyotjs.github.io/duckclear.png" type="image/x-icon">
-  <link rel="stylesheet" href="https://guyotjs.github.io/bcss/bc.css">
-  <link rel="stylesheet" href="https://guyotjs.github.io/bcss/bc-colors.css">
+  <title>nano</title>
 </head>
-<body class="bg-night">
-  <script src="./nano.js"></script>
-  <div id="app" class="true-center text-center"></div>
-<button onclick="add()">h</button>
+<body>
+  <p id="count"></p>
   <script>
-    let [count, setCount] = useState(0);
-
-    function add(){
-      setCount(count+1);
-      document.getElementById("app").innerHTML = count
+    let bound;
+    function $(val,dat){
+      dat = document.getElementById(dat);
+      setTimeout(()=>{dat.innerHTML=val;},0);
+      return val;
     }
+    function $set(val,dat){
+      dat = document.getElementById(dat);
+      setTimeout(()=>{dat.innerHTML=val;},0);
+      return val;
+    }
+    function $bind(val){
+      bound = document.getElementById(val)
+    }
+
+    let count = $(0,"count");
+    // $bind("count")
+    count = $set(count+1,"count");
+
   </script>
 </body>
 </html>
