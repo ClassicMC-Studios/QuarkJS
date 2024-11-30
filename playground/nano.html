@@ -8,19 +8,20 @@
 <body>
   <p id="count"></p>
   <script>
-    let bound;
-    function $(val,dat){
-      dat = document.getElementById(dat);
-      setTimeout(()=>{dat.innerHTML=val;},0);
+    let bound=[]
+    function $(val){
       return val;
     }
-    function $set(val,dat){
-      dat = document.getElementById(dat);
-      setTimeout(()=>{dat.innerHTML=val;},0);
+    function $set(val){
       return val;
     }
-    function $bind(val){
-      bound = document.getElementById(val)
+    function $bind(func,id){
+      bound.push([func,document.getElementById(id)]);
+    }
+    function $$(){
+      for(let i=0;i<bound.length;i++;){
+        bound[i][1].innerHTML = bound[i][0]();
+      }
     }
 
     let count = $(0,"count");
