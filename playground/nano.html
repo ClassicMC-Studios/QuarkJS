@@ -18,7 +18,7 @@
 
     let count = $(0);
     $bind(()=>{return `
-      a ${count <= 3 ? "few": count<=15 ? "handful":"ton"}...${count}
+      a ${count <= 3 ? "few": count<=15 ? "couple":"lot"}...${count}
     `;},"app");
     function add(){
       count = $set(count+1);
