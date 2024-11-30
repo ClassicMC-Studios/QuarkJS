@@ -1,12 +1,13 @@
-# This JS Libray _Sucks_
+# QuarkJS
 
+> This JS Libray _Sucks_
+>
 > There is no way around that
 
 But it is modeled after React
 
 ```html
-<!-- BCSS + Colors for styling -->
-  <div id="app" class="true-center text-center"></div>
+  <div id="app"></div>
   <script>
     let [count, setCount] = useState(0);
 
@@ -15,11 +16,10 @@ But it is modeled after React
     }
     function app(){
       return `
-        <p class="f-xl">${count}</p><br/>
-        <button class="p f-m hover-bg-null no-border r" onclick="add()">+</button>
+        <p>${count}</p><br/>
+        <button onclick="add()">+</button>
       `
     };
-    // Id of element to render, the function for templating.
     extend("app",app);
   </script>
 ```
@@ -37,3 +37,25 @@ To serve this to a div with an id use the function `extend("id",templateFunc);`
 Because it allows updates to happen __only__ when the application updates.
 
 This saves preformance and __boosts__ computer speed.
+
+### NanoJS
+
+> This library is mid (basically useless)
+
+```html
+<div id="app"></div>
+<script>
+  let count = $(0);
+  $bind(()=>{return `a ${count <= 3 ? "few": count <= 10 ? "couple":"lot"}...${count}`;},"app");
+  function add(){
+    count = $set(count+1);
+  }
+</script>
+```
+
+### Basics
+
+Define any variable like `let myVar = $(myVal);`<br/>
+Update any variable with `myVar = $set(newVal);`<br/> 
+Render the variable with `$bind(()=>{return myVar;},"myId");`<br/>
+Adding the styling using `$css("myUrl");`
