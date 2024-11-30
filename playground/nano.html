@@ -7,22 +7,19 @@
   <script src="./nano.js"></script>
 </head>
 <body>
-  <div id="app"></div>
+  <div class='main bg-night'></div>
+  <div class="true-center text-center">
+    <h1 class="white" id="app"></h1>
+    <button class="m r border-gray bg-night p gray" onclick="add()">+</button>
+  </div>
   <script>
     $css("bcss");
     $css("bc-colors");
 
     let count = $(0);
-    function template(){
-      return (`
-        <div class='main bg-night'></div>
-        <div class="true-center text-center">
-          <h1 class="white">a ${count <= 3 ? "couple":"lot"}...${count}</h1>
-          <button class="m r border-gray bg-night p gray" onclick="add()">+</button>
-        </div>
-      `)
-    }
-    $bind(template,"app");
+    $bind(()=>{return `
+      a ${count <= 3 ? "few": count<=15 ? "handful":"ton"}...${count}
+    `;},"app");
     function add(){
       count = $set(count+1);
     }
